@@ -177,7 +177,7 @@ int Tests() {
     TestInvalidHour();
     TestInvalidMinute();
     TestInvalidSecond();
-    return 0;:
+    return 0;
 }
 
 int main() {
