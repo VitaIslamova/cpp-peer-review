@@ -68,7 +68,7 @@ const std::string TIME_ZONE = "time_zone";
 const std::string LANGUAGES = "languages";
 const std::string CITIES = "cities";
 
-Country parseCountry(const Json &country_json) {
+Country ParseCountry(const Json &country_json) {
     auto &country_obj = country_json.AsObject();
     Country country = {
             country_obj[NAME].AsString(),
@@ -83,7 +83,7 @@ Country parseCountry(const Json &country_json) {
     return country;
 }
 
-City parseCity(const Json &city_json, const Country &country) {
+City ParseCity(const Json &city_json, const Country &country) {
     auto &city_obj = city_json.AsObject();
     return {
             city_obj[NAME].AsString(),
@@ -96,13 +96,13 @@ City parseCity(const Json &city_json, const Country &country) {
     };
 }
 
-void parseCountryAndCities(const Json &json, vector<Country> &countries, vector<City> &cities) {
+void ParseCountryJson(const Json &json, vector<Country> &countries, vector<City> &cities) {
     for (auto &country_json: json.AsList()) {
-        Country country = parseCountry(country_json);
+        Country country = ParseCountry(country_json);
         countries.push_back(country);
 
         for (const auto &city_json: country_json[CITIES]) {
-            cities.push_back(parseCity(city_json, country));
+            cities.push_back(ParseCity(city_json, country));
         }
     }
 }
