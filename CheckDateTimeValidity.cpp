@@ -6,25 +6,20 @@ using namespace std;
 using namespace std::literals;
 
 namespace datetime {
-    static const int MinYear = 1;
-    static const int MaxYear = 9999;
-    static const int MinMonth = 1;
-    static const int MaxMonth = 12;
-    static const int MinDay = 1;
-    static const int MinHour = 0;
-    static const int MaxHour = 23;
-    static const int MinMinuteSecond = 0;
-    static const int MaxMinuteSecond = 59;
-    static const int LeapYearDivisor = 4;
-    static const int LeapYearExceptionDivisor1 = 100;
-    static const int LeapYearExceptionDivisor2 = 400;
-    constexpr static const array<int, 12>
-    MonthLengthsNonLeapYear {
-    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-};
-constexpr static const array<int, 12>
-MonthLengthsLeapYear{
-31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    const int MinYear = 1;
+    const int MaxYear = 9999;
+    const int MinMonth = 1;
+    const int MaxMonth = 12;
+    const int MinDay = 1;
+    const int MinHour = 0;
+    const int MaxHour = 23;
+    const int MinMinuteSecond = 0;
+    const int MaxMinuteSecond = 59;
+    const int LeapYearDivisor = 4;
+    const int LeapYearExceptionDivisor1 = 100;
+    const int LeapYearExceptionDivisor2 = 400;
+    constexpr const array<int, 12> MonthLengthsNonLeapYear{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    constexpr const array<int, 12> MonthLengthsLeapYear{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 void CheckYearValidity(int year) {
     if (year < MinYear) {
